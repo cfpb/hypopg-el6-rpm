@@ -65,7 +65,7 @@ Install the built RPM by running "sudo yum install RPMS/x86_64/hypopg-0.0.4-1.el
 
     You can now use EXPLAIN (without ANALYZE) to check if PostgreSQL would use that index !
 
-    img# EXPLAIN SELECT * FROM testable WHERE id = 1000 ;
+        # EXPLAIN SELECT * FROM testable WHERE id = 1000 ;
                                           QUERY PLAN
         -----------------------------------------------------------------------------------------------
         Index Scan using 41079_btree_testable_id on testable  (cost=0.05..8.07 rows=1 width=15)
