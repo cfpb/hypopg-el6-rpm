@@ -15,9 +15,6 @@ HYPOPG is an extension that adds hypothetical indexes in PostgreSQL.
     When installed hypopg will act as an extension for Postgresql. 
 
 
-  - **Functions: 
-    See this page for details on functions: pgxn.org/dist/hypopg/user_guide.html#Functions
-
 
 =======
 
