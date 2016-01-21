@@ -69,7 +69,7 @@ Install the built RPM by running "sudo yum install RPMS/x86_64/hypopg-0.0.4-1.el
          Index Cond: (id = 1000)
         (2 rows)
 
-    At this point, if there was an inde on the 'id' column, Postgresql would take advantage of it.
+    At this point, if there was an index on the 'id' column, Postgresql would take advantage of it.
 
 ## Known issues
 
