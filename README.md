@@ -26,12 +26,14 @@ HYPOPG is an extension that adds hypothetical indexes in PostgreSQL.
 ## Installation
 
 Build RPM using Vagrant
+
     1. The repo is cloned into a local sandbox
     2. Run "vagrant up" to build the VM.
     3. Run "vagrant ssh" to connect to VM.
     4. Run rpmbuild -ba SPECS/hypopg.spec --define 'pg_dir /usr/pgsql-9.4' to build the hypopg rpm package.
 
 Build RPM on server
+
     1. Once repo is cloned, run "sh ./bootstrap.sh"
     2. cd to ~/rpmbuild 
     3. Run "rpmbuild -ba /SPECS/hypopg.spec --define 'pg_dir /usr/pgsql-9.4'
