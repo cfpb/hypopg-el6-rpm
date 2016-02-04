@@ -36,7 +36,7 @@ Build RPM on server
 
     1. Once repo is cloned, run "sh ./bootstrap.sh"
     2. cd to ~/rpmbuild 
-    3. Run "rpmbuild -ba /SPECS/hypopg.spec --define 'pg_dir /usr/pgsql-9.4'
+    3. Run rpmbuild -ba /SPECS/hypopg.spec --define 'pg_dir /usr/pgsql-9.4'
 
     Please note "pg_dir" must be available in your environment path.
 
