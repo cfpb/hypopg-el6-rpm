@@ -36,7 +36,7 @@ Build RPM on server
 2. cd to ~/rpmbuild 
 3. Run "rpmbuild -ba /SPECS/hypopg.spec --define 'pg_dir /usr/pgsql-9.4'
 
-    Please note that you may have a different path to the pgsql-9.4...if so please add to your environment path.
+    Please note "pg_dir" must be available in your environment path.
 
 Installing the RPM 
 Install the built RPM by running "sudo yum install RPMS/x86_64/hypopg-0.0.4-1.el6.x86_64.rpm"
