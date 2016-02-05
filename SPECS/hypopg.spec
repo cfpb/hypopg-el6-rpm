@@ -52,13 +52,17 @@ BuildRoot: %(mktemp -ud %{_tmppath}/build/%{name}-%{version}-%{release}-XXXXXX)
 
 %build
 #%%configure
-#make %{?_smp_mflags}
-mkdir -p %{buildroot}/etc/profile.d
+make %{?_smp_mflags}
+
+
+
+
+#mkdir -p %{buildroot}/etc/profile.d
 
 #echo "export PATH=$PATH:/usr/pgsql-9.4/bin/" >> %{buildroot}/etc/profile.d/hypopg.sh
-echo "export PATH=$PATH:/usr/pgsql-9.4/bin/" >> %{buildroot}/etc/profile.d/hypopg.sh
-echo "export USE_PGXS=1" >> %{buildroot}/etc/profile.d/hypopg.sh
-source %{buildroot}/etc/profile.d/hypopg.sh
+#echo "export PATH=$PATH:%{pg_dir}/bin/" >> %{buildroot}/etc/profile.d/hypopg.sh
+#echo "export USE_PGXS=1" >> %{buildroot}/etc/profile.d/hypopg.sh
+#source %{buildroot}/etc/profile.d/hypopg.sh
 
 
 %install
@@ -66,10 +70,12 @@ source %{buildroot}/etc/profile.d/hypopg.sh
 
 
 %files
+%defattr(-,root,root,-)
 /usr/pgsql-9.4/lib/hypopg.so
 /usr/pgsql-9.4/share/extension/hypopg--0.0.4.sql
 /usr/pgsql-9.4/share/extension/hypopg.control
 /usr/share/doc/pgsql/extension/README.md
+
 %doc
 
 
