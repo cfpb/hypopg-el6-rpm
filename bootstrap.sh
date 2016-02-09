@@ -8,7 +8,7 @@ if [ "$SCRIPTPATH" = "/tmp" ] ; then
    fi
   
   mkdir -p $HOME/rpmbuild/{BUILD,RPMS,SOURCES,SRPMS}
- #ln -sf $SCRIPTPATH/SPECS $HOME/rpmbuild/SPECS
+ ln -sf $SCRIPTPATH/SPECS $HOME/rpmbuild/SPECS
 echo '%_topdir '$HOME'/rpmbuild' > $HOME/.rpmmacros
 cd $HOME/rpmbuild/SOURCES
 wget https://github.com/dalibo/hypopg/archive/0.0.4.tar.gz
