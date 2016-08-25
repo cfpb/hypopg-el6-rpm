@@ -1,4 +1,4 @@
-# HYPOPG 0.0.4-1 RPM built for RHEL 6.5
+# HYPOPG 0.0.4-1 RPM built for RHEL 6.X
 
 **Description**: This project to build an hypopg spec file for building the hypopg rpm package as an extension for Postgresql.
 
@@ -20,7 +20,8 @@ HYPOPG is an extension that adds hypothetical indexes in PostgreSQL.
 
 ## Dependencies
 
-    The build process for the hypopg rpm requires postgresql9.4-devel and postgresql9.4 (x86_64) packages. 
+    The build process for the hypopg rpm requires postgresql9.4-devel and postgresql9.4 (x86_64) packages or higher 
+    This build is done with postgresql95
     And the hypopg package is intended for an x86_64 system.
 
 ## Installation
@@ -30,13 +31,13 @@ Build RPM using Vagrant
     1. The repo is cloned into a local sandbox
     2. Run "vagrant up" to build the VM.
     3. Run "vagrant ssh" to connect to VM.
-    4. Run rpmbuild -ba SPECS/hypopg.spec --define 'pg_dir /usr/pgsql-9.4' to build the hypopg rpm package.
+    4. Run rpmbuild -ba SPECS/hypopg.spec --define 'pg_dir /usr/pgsql-9.5' --define 'suffix 95' to build the hypopg rpm package.
 
 Build RPM on server
 
     1. Once repo is cloned, run "sh ./bootstrap.sh"
     2. cd to ~/rpmbuild 
-    3. Run rpmbuild -ba /SPECS/hypopg.spec --define 'pg_dir /usr/pgsql-9.4'
+    3. Run rpmbuild -ba /SPECS/hypopg.spec --define 'pg_dir /usr/pgsql-9.5' --define 'suffix 95'
 
     Please note "pg_dir" must be available in your environment path.
 
