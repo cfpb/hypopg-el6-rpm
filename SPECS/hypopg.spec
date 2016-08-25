@@ -49,26 +49,24 @@ BuildRoot: %(mktemp -ud %{_tmppath}/build/%{name}-%{version}-%{release}-XXXXXX)
 #%setup -q -n %{name}-%{version}
 %setup -n hypopg-0.0.4
 
+#######################################################
 
 %build
 #%%configure
 make %{?_smp_mflags}
 
+#######################################################
 
-
+%install
+%make_install
 
 mkdir -p %{_buildrootdir}/etc/profile.d
-
 
 echo 'export PATH=$PATH:%{pg_dir}/bin/' >> %{_buildrootdir}/etc/profile.d/hypopg.sh
 echo 'export USE_PGXS=1' >> %{_buildrootdir}/etc/profile.d/hypopg.sh
 source %{_buildrootdir}/etc/profile.d/hypopg.sh
 
-
-%install
-%make_install
-
-
+#######################################################
 %files
 %defattr(-,root,root,-)
 /usr/pgsql-9.5/doc/extension/README.md
