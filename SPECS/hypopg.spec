@@ -57,12 +57,12 @@ make %{?_smp_mflags}
 
 
 
-mkdir -p %{buildroot}/etc/profile.d
+mkdir -p %{_buildrootdir}/etc/profile.d
 
 
-echo 'export PATH=$PATH:%{pg_dir}/bin/' >> %{_buildrootdir}/hypopg-0.0.4-1.el6.x86_64/etc/profile.d/hypopg.sh
-echo 'export USE_PGXS=1' >> %{_buildrootdir}/hypopg-0.0.4-1.el6.x86_64/etc/profile.d/hypopg.sh
-source %{_buildrootdir}/hypopg-0.0.4-1.el6.x86_64/etc/profile.d/hypopg.sh
+echo 'export PATH=$PATH:%{pg_dir}/bin/' >> %{_buildrootdir}/etc/profile.d/hypopg.sh
+echo 'export USE_PGXS=1' >> %{_buildrootdir}/etc/profile.d/hypopg.sh
+source %{_buildrootdir}/etc/profile.d/hypopg.sh
 
 
 %install
