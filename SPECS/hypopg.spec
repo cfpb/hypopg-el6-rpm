@@ -4,7 +4,7 @@
 %global _version 0.0.4
 
 
-Name:           hypopg%{suffix}
+Name:           hypopg%{_suffix}
 Version:        %{_version}
 Release:        1%{?dist}
 Summary:        HypoPG is a PostgreSQL extension adding support for hypothetical indexes
@@ -14,8 +14,8 @@ License:        PostgreSQL License
 URL:            https://github.com/dalibo/hypopg
 Source:         https://github.com/dalibo/hypopg/archive/0.0.4.tar.gz
 
-Obsoletes:      hypopg%{suffix} <= 0.03
-Provides:       hypopg%{suffix} = 0.04
+Obsoletes:      hypopg <= 0.03
+Provides:       hypopg%{_suffix} = 0.04
 
 %description
 This software is EXPERIMENTAL and therefore NOT production ready. Use at your own risk.
@@ -42,38 +42,24 @@ BuildRoot: %(mktemp -ud %{_tmppath}/build/%{name}-%{version}-%{release}-XXXXXX)
 # -n defines the name of the directory
 #######################################################
 
-
 %prep
-
-
-#%setup -q -n %{name}-%{version}
 %setup -n hypopg-0.0.4
 
 #######################################################
 
 %build
-#%%configure
 make %{?_smp_mflags}
 
 #######################################################
 
 %install
-%make_install
+make install USE_PGXS=1 DESTDIR=${RPM_BUILD_ROOT}
 
-mkdir -p %{_buildrootdir}/etc/profile.d
-
-echo 'export PATH=$PATH:%{pg_dir}/bin/' >> %{_buildrootdir}/etc/profile.d/hypopg.sh
-echo 'export USE_PGXS=1' >> %{_buildrootdir}/etc/profile.d/hypopg.sh
-source %{_buildrootdir}/etc/profile.d/hypopg.sh
 
 #######################################################
 %files
 %defattr(-,root,root,-)
-/usr/pgsql-9.5/doc/extension/README.md
-/usr/pgsql-9.5/lib/hypopg.so
-/usr/pgsql-9.5/share/extension/hypopg--0.0.4.sql
-/usr/pgsql-9.5/share/extension/hypopg.control
-
+%{pg_dir}
 
 
 %changelog
