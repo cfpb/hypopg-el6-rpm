@@ -14,7 +14,7 @@ License:        PostgreSQL License
 URL:            https://github.com/dalibo/hypopg
 Source:         https://github.com/dalibo/hypopg/archive/0.0.4.tar.gz
 
-Obsoletes:      hypopg <= 0.03
+Obsoletes:      hypopg%{_suffix} <= 0.03
 Provides:       hypopg%{_suffix} = 0.04
 
 %description
