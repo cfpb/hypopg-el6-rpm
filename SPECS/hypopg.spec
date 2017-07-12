@@ -1,7 +1,7 @@
 ###############
 # Set metadata
 ###############
-%global _version 0.0.4
+%global _version 1.0.0
 
 
 Name:           hypopg%{_suffix}
@@ -12,10 +12,10 @@ Summary:        HypoPG is a PostgreSQL extension adding support for hypothetical
 Group:          Development/Tools
 License:        PostgreSQL License
 URL:            https://github.com/dalibo/hypopg
-Source:         https://github.com/dalibo/hypopg/archive/0.0.4.tar.gz
+Source:         https://github.com/dalibo/hypopg/archive/1.0.0.tar.gz
 
-Obsoletes:      hypopg%{_suffix} <= 0.03
-Provides:       hypopg%{_suffix} = 0.04
+Obsoletes:      hypopg%{_suffix} <= 1.0.0
+Provides:       hypopg%{_suffix} = 1.0.0
 
 %description
 This software is EXPERIMENTAL and therefore NOT production ready. Use at your own risk.
@@ -43,7 +43,7 @@ BuildRoot: %(mktemp -ud %{_tmppath}/build/%{name}-%{version}-%{release}-XXXXXX)
 #######################################################
 
 %prep
-%setup -n hypopg-0.0.4
+%setup -n hypopg-1.0.0
 
 #######################################################
 
