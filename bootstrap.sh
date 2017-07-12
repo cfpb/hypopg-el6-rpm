@@ -11,4 +11,4 @@ if [ "$SCRIPTPATH" = "/tmp" ] ; then
  ln -sf $SCRIPTPATH/SPECS $HOME/rpmbuild/SPECS
 echo '%_topdir '$HOME'/rpmbuild' > $HOME/.rpmmacros
 cd $HOME/rpmbuild/SOURCES
-wget https://github.com/dalibo/hypopg/archive/0.0.4.tar.gz
+wget https://github.com/dalibo/hypopg/archive/1.0.0.tar.gz
